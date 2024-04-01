@@ -76,6 +76,8 @@ if (REFLECTCPP_BUILD_TESTS)
     add_subdirectory(tests)
 endif ()
 
+target_compile_definitions(reflectcpp PUBLIC yyjson_inline=inline)
+
 
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
