@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-option(REFLECTCPP_BUILD_SHARED "Build shared library" OFF)
+option(REFLECTCPP_BUILD_SHARED "Build shared library" ${BUILD_SHARED_LIBS})
 option(REFLECTCPP_BSON "Enable BSON support" OFF)
 option(REFLECTCPP_CBOR "Enable CBOR support" OFF)
 option(REFLECTCPP_FLEXBUFFERS "Enable flexbuffers support" OFF)
@@ -112,3 +112,5 @@ install(
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/reflectcpp
     NAMESPACE reflectcpp::
 )
+
+target_compile_definitions(reflectcpp PUBLIC yyjson_inline=inline)
